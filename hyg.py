@@ -16,7 +16,7 @@ def write_issues(r, csvout):
             labels = ', '.join([l['name'] for l in issue['labels']])
             date = issue['created_at'].split('T')[0]
             # Change the following line to write out additional fields
-            csvout.writerow([labels, issue['title'], issue['state'], date,
+            csvout.writerow([labels, issue['title'],issue['body'], issue['state'], date,issue['comments'],
                              issue['html_url']])
 
 
