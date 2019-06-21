@@ -28,7 +28,8 @@ def get_issues(name):
     csvfilename = '{}-issues.csv'.format(name.replace('/', '-'))
     with open(csvfilename, 'w', newline='') as csvfile:
         csvout = csv.writer(csvfile)
-        csvout.writerow(['Labels', 'Title', 'State', 'Date', 'URL'])
+        csvout.writerow(['Labels', 'Title','body', 'State', 'Date','comments', 'URL'])
+
         write_issues(r, csvout)
 
         # Multiple requests are required if response is paged
